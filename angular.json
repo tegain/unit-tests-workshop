@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "house-search-tracker": {
+    "ng-starter-jest": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/house-search-tracker",
+            "outputPath": "dist/ng-starter-jest",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -61,18 +61,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "house-search-tracker:build"
+            "browserTarget": "ng-starter-jest:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "house-search-tracker:build:production"
+              "browserTarget": "ng-starter-jest:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "house-search-tracker:build"
+            "browserTarget": "ng-starter-jest:build"
           }
         },
         "test": {
@@ -96,16 +96,16 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "house-search-tracker:serve"
+            "devServerTarget": "ng-starter-jest:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "house-search-tracker:serve:production"
+              "devServerTarget": "ng-starter-jest:serve:production"
             }
           }
         }
       }
     }
   },
-  "defaultProject": "house-search-tracker"
+  "defaultProject": "ng-starter-jest"
 }
