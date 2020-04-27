@@ -1,13 +1,17 @@
 {
-  "name": "house-search-tracker",
+  "name": "ng-starter-jest",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "ng build --prod",
     "test": "ng test",
+    "test:cov": "ng test --coverage",
+    "test:watch": "ng test --watch",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "prettier": "prettier --write \"src/**/*.{js,json,css,scss,less,md,ts,html,component.html}\"",
+    "postinstall": "ngcc --properties es2015 browser module main --first-only --create-ivy-entry-points"
   },
   "private": true,
   "dependencies": {
@@ -24,24 +28,51 @@
     "zone.js": "~0.10.2"
   },
   "devDependencies": {
+    "@angular-builders/jest": "^9.0.1",
     "@angular-devkit/build-angular": "~0.901.3",
     "@angular/cli": "~9.1.3",
     "@angular/compiler-cli": "~9.1.3",
     "@angular/language-service": "~9.1.3",
+    "@types/jest": "^25.2.1",
     "@types/node": "^12.11.1",
-    "@types/jasmine": "~3.5.0",
-    "@types/jasminewd2": "~2.0.3",
     "codelyzer": "^5.1.2",
-    "jasmine-core": "~3.5.0",
-    "jasmine-spec-reporter": "~4.2.1",
-    "karma": "~5.0.0",
-    "karma-chrome-launcher": "~3.1.0",
-    "karma-coverage-istanbul-reporter": "~2.1.0",
-    "karma-jasmine": "~3.0.1",
-    "karma-jasmine-html-reporter": "^1.4.2",
+    "husky": "^4.2.5",
+    "jest": "^25.4.0",
+    "lint-staged": "^10.1.7",
+    "prettier": "1.19.1",
+    "prettier-plugin-sorted": "^1.2.1",
+    "pretty-quick": "^2.0.1",
     "protractor": "~5.4.3",
     "ts-node": "~8.3.0",
     "tslint": "~6.1.0",
+    "tslint-config-prettier": "^1.18.0",
     "typescript": "~3.8.3"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "pre-push": "npm run lint"
+    }
+  },
+  "lint-staged": {
+    "*.{js,json,css,scss,less,md,ts,html,component.html}": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "importSort": {
+    ".js, .jsx, .ts, .tsx": {
+      "options": {
+        "cacheStrategy": "directory",
+        "wildcardAtStart": false,
+        "extraAliases": [
+          "@src",
+          "@env",
+          "@app",
+          "@unit",
+          "@styles"
+        ]
+      }
+    }
   }
 }

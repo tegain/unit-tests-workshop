@@ -1,4 +1,13 @@
-# HouseSearchTracker
+# Angular 9+ Jest starter
+
+Features:
+
+- Jest
+- Prettier
+- Sorted imports
+- Git Hooks (pre-commit, pre-push)
+
+---
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.3.
 
