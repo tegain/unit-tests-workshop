@@ -1,0 +1,14 @@
+.add-todo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &-field {
+    flex: 1;
+  }
+
+  &-submit {
+    margin-left: 1rem;
+    flex: 0 0 auto;
+  }
+}

@@ -1,0 +1,12 @@
+<form [formGroup]="addTodoForm" class="add-todo">
+  <mat-form-field class="add-todo-field">
+    <mat-label>Ajouter une chose à faire</mat-label>
+    <input matInput placeholder="ex. : Finir cette todo list" formControlName="title" />
+    <button mat-button *ngIf="titleField.value" matSuffix mat-icon-button aria-label="Clear" (click)="clearTitle()">
+      <mat-icon>close</mat-icon>
+    </button>
+  </mat-form-field>
+  <button mat-button mat-raised-button class="add-todo-submit" type="button" color="primary">
+    Ajouter
+  </button>
+</form>

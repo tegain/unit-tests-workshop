@@ -1,0 +1,16 @@
+<article class="container">
+  <header>
+    <h1>Todos</h1>
+  </header>
+  <mat-card *ngIf="todos$ | async as todos">
+    <mat-card-content>
+      <app-add-todo></app-add-todo>
+      <app-todos-list *ngIf="todos.length > 0" [todos]="todos"></app-todos-list>
+    </mat-card-content>
+    <mat-card-footer class="todos-action">
+      <button mat-button *ngIf="todos.length > 0" mat-raised-button color="accent">
+        Sélectionner une todo au hasard
+      </button>
+    </mat-card-footer>
+  </mat-card>
+</article>
